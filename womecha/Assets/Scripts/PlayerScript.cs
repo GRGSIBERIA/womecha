@@ -46,14 +46,6 @@ public class PlayerScript : MonoBehaviour
         ts.rotation = Quaternion.identity;  // 回転をキャンセル
         rigid.angularVelocity = 0f;         // 回転の勢いをキャンセル
         rigid.totalTorque = 0f;             // 回転の力をキャンセル
-
-        /*
-        // 想定よりも大きい速度が出たらキャンセル
-        if (rigid.velocity.sqrMagnitude > velocityLimit * velocityLimit) 
-        {
-            rigid.velocity = rigid.velocity.normalized * velocityLimit;
-        }
-        */
     }
 
     // Update is called once per frame
