@@ -10,9 +10,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     float movePower = 4f;
 
-    [SerializeField]
-    float velocityLimit = 4f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -48,9 +45,15 @@ public class PlayerScript : MonoBehaviour
         rigid.totalTorque = 0f;             // ‰ñ“]‚Ì—Í‚ðƒLƒƒƒ“ƒZƒ‹
     }
 
+    void ShootProcedure()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
         MoveProcedure();
+        ShootProcedure();
     }
 }
