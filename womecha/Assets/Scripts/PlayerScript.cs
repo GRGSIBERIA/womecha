@@ -15,6 +15,9 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     Status status;
 
+    [SerializeField]
+    float dragConstant = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +36,7 @@ public class PlayerScript : MonoBehaviour
         xp *= new Vector2(2f, 2f);
         xp -= Vector2.one;
         
-        rigid.drag = Mathf.Exp(xp.sqrMagnitude * 2f);
+        rigid.drag = Mathf.Exp(xp.sqrMagnitude * dragConstant);
         
 
         if (Input.GetKey(KeyCode.W))
