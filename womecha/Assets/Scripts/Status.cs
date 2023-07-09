@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Status
+[System.Serializable]
+public struct Status
 {
-    public float HP = 100f;
-    public float Stamina = 100f;
+    [SerializeField]
+    public float HP;
+
+    [SerializeField]
+    public float Stamina;
 }
