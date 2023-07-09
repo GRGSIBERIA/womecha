@@ -77,4 +77,17 @@ public class PlayerScript : MonoBehaviour
         MoveProcedure();
         ShootProcedure();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision == null) return;
+
+        switch (collision.gameObject.tag)
+        {
+            case "EBullet":
+                break;
+            case "Wall":
+                break;
+        }
+    }
 }
