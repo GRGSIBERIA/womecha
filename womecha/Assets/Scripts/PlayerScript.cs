@@ -25,16 +25,15 @@ public class PlayerScript : MonoBehaviour
 
     void MoveProcedure()
     {
+        // ƒJƒƒ‰‚ÌŽû‚Ü‚è‹ï‡‚É‚æ‚Á‚Ä“®‚«‚â‚·‚³‚ð•Ï‰»‚³‚¹‚é
         var vp = cam.WorldToViewportPoint(transform.position);
         bool active = (1f > vp.x && vp.x > 0f) && (1f > vp.y && vp.y > 0f) && (vp.z > 0f);
 
         var xp = new Vector2(vp.x, vp.y);
         xp *= new Vector2(2f, 2f);
         xp -= Vector2.one;
-
-        Debug.Log(xp);
         
-        rigid.drag = Mathf.Exp(xp.sqrMagnitude);
+        rigid.drag = Mathf.Exp(xp.sqrMagnitude * 2f);
         
 
         if (Input.GetKey(KeyCode.W))
